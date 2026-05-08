@@ -1,0 +1,12 @@
+[
+  {
+    "name": "CID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CNTRY",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

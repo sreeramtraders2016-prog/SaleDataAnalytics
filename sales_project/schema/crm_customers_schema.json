@@ -1,0 +1,37 @@
+[
+  {
+    "name": "cst_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cst_key",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cst_firstname",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cst_lastname",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cst_marital_status",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cst_gndr",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "cst_create_date",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "name": "sls_ord_num",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_prd_key",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_cust_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_order_dt",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_ship_dt",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_due_dt",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_sales",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_quantity",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sls_price",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

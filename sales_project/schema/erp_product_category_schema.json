@@ -1,0 +1,22 @@
+[
+  {
+    "name": "ID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "CAT",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "SUBCAT",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "MAINTENANCE",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "prd_id",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "prd_key",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "prd_nm",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "prd_cost",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "prd_line",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "prd_start_dt",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "prd_end_dt",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

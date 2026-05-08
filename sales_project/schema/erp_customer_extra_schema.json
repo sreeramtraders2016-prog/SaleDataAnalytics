@@ -1,0 +1,17 @@
+[
+  {
+    "name": "CID",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "BDATE",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "GEN",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
