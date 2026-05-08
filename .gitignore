@@ -1,0 +1,13 @@
+# Backup files
+*.bkp
+~$*
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Windows
+Thumbs.db
