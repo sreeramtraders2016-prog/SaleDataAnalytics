@@ -19,7 +19,7 @@ bq mk -d gold_sales_ds
 # ==========================================
 
 bq load \
---source_format=CSV \
+--replace --source_format=CSV \
 --skip_leading_rows=1 \
 bronze_sales_ds.crm_customers_raw \
 gs://spalika_sales_data/data/cust_info.csv \
@@ -32,7 +32,7 @@ bq head bronze_sales_ds.crm_customers_raw
 # ==========================================
 
 bq load \
---source_format=CSV \
+--replace --source_format=CSV \
 --skip_leading_rows=1 \
 bronze_sales_ds.crm_products_raw \
 gs://spalika_sales_data/data/prd_info.csv \
@@ -45,7 +45,7 @@ bq head bronze_sales_ds.crm_products_raw
 # ==========================================
 
 bq load \
---source_format=CSV \
+--replace --source_format=CSV \
 --skip_leading_rows=1 \
 bronze_sales_ds.crm_sales_raw \
 gs://spalika_sales_data/data/sales_details.csv \
@@ -58,7 +58,7 @@ bq head bronze_sales_ds.crm_sales_raw
 # ==========================================
 
 bq load \
---source_format=CSV \
+--replace --source_format=CSV \
 --skip_leading_rows=1 \
 bronze_sales_ds.erp_customer_extra_raw \
 gs://spalika_sales_data/data/ERP_CUST_AZ12.csv \
@@ -71,7 +71,7 @@ bq head bronze_sales_ds.erp_customer_extra_raw
 # ==========================================
 
 bq load \
---source_format=CSV \
+--replace --source_format=CSV \
 --skip_leading_rows=1 \
 bronze_sales_ds.erp_customer_loc_raw \
 gs://spalika_sales_data/data/ERP_LOC_A101.csv \
@@ -84,7 +84,7 @@ bq head bronze_sales_ds.erp_customer_loc_raw
 # ==========================================
 
 bq load \
---source_format=CSV \
+--replace --source_format=CSV \
 --skip_leading_rows=1 \
 bronze_sales_ds.erp_product_category_raw \
 gs://spalika_sales_data/data/ERP_PX_CAT_G1V2.csv \

@@ -5,5 +5,8 @@ Create table silver_sales_ds.crm_products (
 	prd_cost float64,
 	prd_line string,
 	prd_start_dt date,
-	prd_end_dt date
+	prd_end_dt date,
+	cid string,
+	ingestion_dt timestamp
 	)
+	
