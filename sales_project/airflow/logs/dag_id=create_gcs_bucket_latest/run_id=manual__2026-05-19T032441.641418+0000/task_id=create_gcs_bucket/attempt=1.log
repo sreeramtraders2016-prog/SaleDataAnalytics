@@ -1,0 +1,37 @@
+[2026-05-19T03:24:43.088+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-19T03:24:43.144+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: create_gcs_bucket_latest.create_gcs_bucket manual__2026-05-19T03:24:41.641418+00:00 [queued]>
+[2026-05-19T03:24:43.158+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: create_gcs_bucket_latest.create_gcs_bucket manual__2026-05-19T03:24:41.641418+00:00 [queued]>
+[2026-05-19T03:24:43.159+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-19T03:24:43.177+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): create_gcs_bucket> on 2026-05-19 03:24:41.641418+00:00
+[2026-05-19T03:24:43.192+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'create_gcs_bucket_latest', 'create_gcs_bucket', 'manual__2026-05-19T03:24:41.641418+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/CreateGcsBucket.py', '--cfg-path', '/tmp/tmpqc8pbqpf']
+[2026-05-19T03:24:43.199+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=224) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-19T03:24:43.203+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask create_gcs_bucket
+[2026-05-19T03:24:43.203+0000] {standard_task_runner.py:64} INFO - Started process 225 to run task
+[2026-05-19T03:24:43.340+0000] {task_command.py:426} INFO - Running <TaskInstance: create_gcs_bucket_latest.create_gcs_bucket manual__2026-05-19T03:24:41.641418+00:00 [running]> on host 502c7698be88
+[2026-05-19T03:24:43.570+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='create_gcs_bucket_latest' AIRFLOW_CTX_TASK_ID='create_gcs_bucket' AIRFLOW_CTX_EXECUTION_DATE='2026-05-19T03:24:41.641418+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-19T03:24:41.641418+00:00'
+[2026-05-19T03:24:43.571+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-19T03:24:43.630+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-19T03:24:43.631+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        export GOOGLE_APPLICATION_CREDENTIALS=/opt/***/keys/service-account.json\n\n        if ! gcloud storage buckets describe gs://spalika_sales_data >/dev/null 2>&1; then\n            gcloud storage buckets create gs://spalika_sales_data             --location=US             --uniform-bucket-level-access\n        else\n            echo "Bucket already exists"\n        fi\n        ']
+[2026-05-19T03:24:43.647+0000] {subprocess.py:86} INFO - Output:
+[2026-05-19T03:24:43.654+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 5: gcloud: command not found
+[2026-05-19T03:24:43.655+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2026-05-19T03:24:43.657+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-19T03:24:43.679+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2026-05-19T03:24:43.685+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=create_gcs_bucket_latest, task_id=create_gcs_bucket, run_id=manual__2026-05-19T03:24:41.641418+00:00, execution_date=20260519T032441, start_date=20260519T032443, end_date=20260519T032443
+[2026-05-19T03:24:43.704+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 2 for task create_gcs_bucket (Bash command failed. The command returned a non-zero exit code 127.; 225)
+[2026-05-19T03:24:43.742+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-05-19T03:24:43.767+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-19T03:24:43.770+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
