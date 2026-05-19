@@ -1,0 +1,16 @@
+# GCP Keys
+airflow/keys/*.json
+
+# Airflow Logs
+airflow/logs/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

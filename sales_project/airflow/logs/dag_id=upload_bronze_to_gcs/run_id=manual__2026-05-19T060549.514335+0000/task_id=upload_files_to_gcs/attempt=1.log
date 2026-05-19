@@ -1,39 +1,0 @@
-[2026-05-19T06:05:51.564+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
-[2026-05-19T06:05:51.608+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: upload_bronze_to_gcs.upload_files_to_gcs manual__2026-05-19T06:05:49.514335+00:00 [queued]>
-[2026-05-19T06:05:51.618+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: upload_bronze_to_gcs.upload_files_to_gcs manual__2026-05-19T06:05:49.514335+00:00 [queued]>
-[2026-05-19T06:05:51.619+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
-[2026-05-19T06:05:51.646+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): upload_files_to_gcs> on 2026-05-19 06:05:49.514335+00:00
-[2026-05-19T06:05:51.656+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'upload_bronze_to_gcs', 'upload_files_to_gcs', 'manual__2026-05-19T06:05:49.514335+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/UploadBronzeToGcs.py', '--cfg-path', '/tmp/tmp7djv4hmb']
-[2026-05-19T06:05:51.661+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask upload_files_to_gcs
-[2026-05-19T06:05:51.665+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=525) is multi-threaded, use of fork() may lead to deadlocks in the child.
-[2026-05-19T06:05:51.666+0000] {standard_task_runner.py:64} INFO - Started process 526 to run task
-[2026-05-19T06:05:51.764+0000] {task_command.py:426} INFO - Running <TaskInstance: upload_bronze_to_gcs.upload_files_to_gcs manual__2026-05-19T06:05:49.514335+00:00 [running]> on host 43bc07cc5853
-[2026-05-19T06:05:51.923+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='upload_bronze_to_gcs' AIRFLOW_CTX_TASK_ID='upload_files_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2026-05-19T06:05:49.514335+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-19T06:05:49.514335+00:00'
-[2026-05-19T06:05:51.924+0000] {taskinstance.py:430} INFO - ::endgroup::
-[2026-05-19T06:05:51.944+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
-[2026-05-19T06:05:51.946+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        export GOOGLE_APPLICATION_CREDENTIALS=/opt/***/keys/sodium-hope-496414-q7-67bd82e4d356.json\n\n        gcloud auth activate-service-account             --key-file=$GOOGLE_APPLICATION_CREDENTIALS\n\n        gcloud config set project sodium-hope-496414-q7\n\n        echo "Uploading Bronze CSV files to GCS..."\n\n        gsutil cp /opt/***/data/bronze/*.csv         gs://spalika_sales_data-2016/raw/\n\n        echo "Upload Completed"\n        ']
-[2026-05-19T06:05:51.956+0000] {subprocess.py:86} INFO - Output:
-[2026-05-19T06:05:53.164+0000] {subprocess.py:93} INFO - Activated service account credentials for: [***-gcp@sodium-hope-496414-q7.iam.gserviceaccount.com]
-[2026-05-19T06:05:55.428+0000] {subprocess.py:93} INFO - Updated property [core/project].
-[2026-05-19T06:05:55.588+0000] {subprocess.py:93} INFO - Uploading Bronze CSV files to GCS...
-[2026-05-19T06:05:57.075+0000] {subprocess.py:93} INFO - Copying file:///opt/***/data/bronze/ERP_CUST_AZ12.csv [Content-Type=text/csv]...
-[2026-05-19T06:05:59.082+0000] {subprocess.py:93} INFO - / [0 files][    0.0 B/548.4 KiB]                                                / [1 files][548.4 KiB/548.4 KiB]                                                -Copying file:///opt/***/data/bronze/ERP_LOC_A101.csv [Content-Type=text/csv]...
-[2026-05-19T06:06:00.928+0000] {subprocess.py:93} INFO - - [1 files][548.4 KiB/941.6 KiB]                                                - [2 files][941.6 KiB/941.6 KiB]                                                \Copying file:///opt/***/data/bronze/ERP_PX_CAT_G1V2.csv [Content-Type=text/csv]...
-[2026-05-19T06:06:01.551+0000] {subprocess.py:93} INFO - \ [2 files][941.6 KiB/942.8 KiB]                                                \ [3 files][942.8 KiB/942.8 KiB]                                                |Copying file:///opt/***/data/bronze/cust_info.csv [Content-Type=text/csv]...
-[2026-05-19T06:06:03.576+0000] {subprocess.py:93} INFO - | [3 files][942.8 KiB/  1.7 MiB]                                                | [4 files][  1.7 MiB/  1.7 MiB]                                                /
-[2026-05-19T06:06:03.577+0000] {subprocess.py:93} INFO - ==> NOTE: You are performing a sequence of gsutil operations that may
-[2026-05-19T06:06:03.578+0000] {subprocess.py:93} INFO - run significantly faster if you instead use gsutil -m cp ... Please
-[2026-05-19T06:06:03.578+0000] {subprocess.py:93} INFO - see the -m section under "gsutil help options" for further information
-[2026-05-19T06:06:03.579+0000] {subprocess.py:93} INFO - about when gsutil -m can be advantageous.
-[2026-05-19T06:06:03.579+0000] {subprocess.py:93} INFO - 
-[2026-05-19T06:06:03.579+0000] {subprocess.py:93} INFO - Copying file:///opt/***/data/bronze/prd_info.csv [Content-Type=text/csv]...
-[2026-05-19T06:06:04.453+0000] {subprocess.py:93} INFO - / [4 files][  1.7 MiB/  1.8 MiB]                                                / [5 files][  1.8 MiB/  1.8 MiB]                                                -Copying file:///opt/***/data/bronze/sales_details.csv [Content-Type=text/csv]...
-[2026-05-19T06:06:07.274+0000] {subprocess.py:93} INFO - - [5 files][  1.8 MiB/  5.2 MiB]                                                - [5 files][  3.6 MiB/  5.2 MiB]                                                \\ [6 files][  5.2 MiB/  5.2 MiB]                                                |
-[2026-05-19T06:06:07.275+0000] {subprocess.py:93} INFO - Operation completed over 6 objects/5.2 MiB.
-[2026-05-19T06:06:07.604+0000] {subprocess.py:93} INFO - Upload Completed
-[2026-05-19T06:06:07.605+0000] {subprocess.py:97} INFO - Command exited with return code 0
-[2026-05-19T06:06:07.606+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
-[2026-05-19T06:06:07.658+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=upload_bronze_to_gcs, task_id=upload_files_to_gcs, run_id=manual__2026-05-19T06:05:49.514335+00:00, execution_date=20260519T060549, start_date=20260519T060551, end_date=20260519T060607
-[2026-05-19T06:06:07.731+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
-[2026-05-19T06:06:07.751+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
-[2026-05-19T06:06:07.766+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
